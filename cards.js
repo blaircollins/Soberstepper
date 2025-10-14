@@ -1,0 +1,1 @@
+export let cards=[]; export async function loadCards(){ const r=await fetch('/cards.json',{cache:'no-store'}); const d=await r.json(); cards=d.cards||[]; }

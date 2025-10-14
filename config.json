@@ -1,0 +1,14 @@
+{
+  "appVersion": "1.4.8",
+  "brand": "SoberStepper",
+  "privacyMode": "local-only",
+  "allowGeolocation": true,
+  "mapProvider": "osm",
+  "calendar": {
+    "ics": true
+  },
+  "featureFlags": {
+    "workspace": true,
+    "library": true
+  }
+}

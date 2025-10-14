@@ -1,0 +1,1 @@
+export async function loadConfig(){ const r = await fetch('/config.json',{cache:'no-store'}); return r.json(); }

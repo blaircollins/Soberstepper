@@ -3,23 +3,22 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>SoberStepper • v1.4.6</title>
+  <title>SoberStepper • v1.4.8</title>
   <meta name="theme-color" content="#ffffff">
-  <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" href="icons/icon-192.png" sizes="192x192">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <link rel="stylesheet" href="styles.css">
-  <!-- Leaflet (cached by SW after first use) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https://tile.openstreetmap.org; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com; connect-src 'self';">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon-192.png" sizes="192x192">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="stylesheet" href="/js/modules/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-  <script>if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js'));</script>
+  <script>if('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'));</script>
 </head>
 <body class="theme-light">
   <header class="app-header">
-    <div class="brand"><span class="logo-dot"></span><span class="title">SoberStepper</span></div>
-    <div class="right"><span class="ver">v1.4.6</span></div>
+    <div class="brand"><img src="/assets/logo.png" alt="SoberScreen" class="brand-logo"/><span class="title">SoberStepper</span></div>
+    <div class="right"><span class="ver" id="app-ver"></span></div>
   </header>
-
   <section class="toolbar">
     <div class="filters">
       <button class="chip active" data-filter="all">All</button>
@@ -34,28 +33,38 @@
       <span class="settings-label">Card size:</span>
       <button class="chip setting" data-size="compact">Compact</button>
       <button class="chip setting" data-size="comfy">Comfy</button>
-      <span class="settings-label">Buttons:</span>
-      <button class="chip setting" data-buttons="text">Text</button>
-      <button class="chip setting" data-buttons="icons">Icons</button>
       <span class="settings-label">Theme:</span>
       <button class="chip setting" data-theme="light">Light</button>
       <button class="chip setting" data-theme="dark">Dark</button>
-      <button class="chip setting" data-export="actions">Export actions (JSON)</button>
-      <button class="chip setting" data-privacy="info">Privacy</button>
+      <button class="chip setting" data-open="library">Library</button>
     </div>
   </section>
-
   <main id="cardList" class="card-list" aria-live="polite"></main>
-
   <footer class="app-footer">
     <div class="footer-row">
-      <span>Gestures — ▶ complete · ◀ later/delete · ◉ double‑tap edit · ⏱ long‑press (comfy) delete</span>
-      <span class="build">Build 2025-10-14 04:17 · v1.4.6</span>
+      <span>Gestures — ▶ complete · ◀ later/delete · ◉ double‑tap edit</span>
+      <span class="build">Build 2025-10-14 20:22 · v1.4.8</span>
     </div>
   </footer>
-
-  <div class="overlay" id="overlay"></div>
-
-  <script src="app.js"></script>
+  <div id="workspace" class="workspace hidden" role="dialog" aria-modal="true">
+    <div class="ws-header">
+      <button id="ws-menu" class="ws-icon">☰</button>
+      <div class="ws-date" id="ws-date"></div>
+      <button id="ws-sos" class="ws-icon danger">SOS</button>
+      <button id="ws-power" class="ws-icon">⏻</button>
+    </div>
+    <div class="ws-subbar">
+      <img src="/assets/logo.png" class="ws-logo" alt="SoberScreen" />
+      <div id="ws-title" class="ws-title">Workspace</div>
+      <img id="ws-avatar" class="ws-avatar" alt="Profile" />
+    </div>
+    <div id="ws-body" class="ws-body"></div>
+    <div class="ws-footer">
+      <button id="ws-back" class="btn">← Back</button>
+      <div class="ws-spacer"></div>
+      <button id="ws-save" class="btn primary">Save</button>
+    </div>
+  </div>
+  <script type="module" src="/js/main.js"></script>
 </body>
 </html>

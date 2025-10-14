@@ -1,106 +1,38 @@
 {
-  "version": "1.4.6",
+  "version": "1.4.8",
   "cards": [
     {
       "id": "c1",
-      "title": "Wake up early",
+      "title": "Take medication",
       "category": "Physical",
-      "when": "daily 06:00",
+      "when": "morning 08:00",
       "where": "Home",
       "coords": [
         37.7749,
         -122.4194
-      ],
-      "resources": [],
-      "notes": "Alarm set for 6:00 AM"
+      ]
     },
     {
       "id": "c2",
-      "title": "No phone for first hour",
-      "category": "Emotional",
-      "when": "09:00",
-      "where": "Kitchen",
+      "title": "Check budget 10 min",
+      "category": "Financial",
+      "when": "monthly 15th",
+      "where": "Desk",
       "coords": [
-        37.775,
+        37.78,
         -122.42
-      ],
-      "resources": [],
-      "notes": "Leave phone in kitchen"
+      ]
     },
     {
       "id": "c3",
-      "title": "Train body \u2014 30 minutes",
-      "category": "Physical",
-      "when": "18:00",
-      "where": "Gym or home",
-      "coords": [
-        37.77,
-        -122.41
-      ],
-      "resources": [
-        "Video"
-      ],
-      "notes": "Keep it simple"
-    },
-    {
-      "id": "c4",
-      "title": "30-minute nature walk",
-      "category": "Emotional",
-      "when": "Anytime",
-      "where": "Nearby trail",
-      "coords": [
-        37.768,
-        -122.45
-      ],
-      "resources": [
-        "Audio"
-      ],
-      "notes": "No headphones"
-    },
-    {
-      "id": "c5",
-      "title": "Work on one skill relentlessly",
-      "category": "Intellectual",
-      "when": "weekly Sunday",
-      "where": "Desk",
-      "coords": [
-        37.76,
-        -122.43
-      ],
-      "resources": [
-        "Text"
-      ],
-      "notes": "Deep work 25m"
-    },
-    {
-      "id": "c6",
       "title": "Call a friend",
       "category": "Social",
       "when": "Evening",
       "where": "Anywhere",
       "coords": [
-        37.78,
+        37.77,
         -122.41
-      ],
-      "resources": [
-        "Form"
-      ],
-      "notes": "Connection beats cravings"
-    },
-    {
-      "id": "c7",
-      "title": "Budget 10 minutes",
-      "category": "Financial",
-      "when": "monthly 15th",
-      "where": "Desk",
-      "coords": [
-        37.79,
-        -122.4
-      ],
-      "resources": [
-        "Spreadsheet"
-      ],
-      "notes": "Track 3 expenses"
+      ]
     }
   ]
 }
