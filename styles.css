@@ -1,0 +1,69 @@
+
+:root {
+  --bg:#ffffff; --text:#0f172a; --muted:#475569; --card:#ffffff; --ring:#e5e7eb; --shadow:rgba(2,6,23,.07);
+  --radius:18px; --pad:14px;
+  --physical:#16a34a; --physical-subtle:#16a34a33;
+  --financial:#d97706; --financial-subtle:#d9770633;
+  --social:#2563eb; --social-subtle:#2563eb33;
+  --intellectual:#7c3aed; --intellectual-subtle:#7c3aed33;
+  --emotional:#dc2626; --emotional-subtle:#dc262633;
+  --spiritual:#0ea5a3; --spiritual-subtle:#0ea5a333;
+}
+body.theme-dark { --bg:#0b1220; --text:#e5e7eb; --muted:#cbd5e1; --card:#0f172a; --ring:#1e293b; --shadow:rgba(0,0,0,.25); }
+
+*{box-sizing:border-box} html,body{height:100%}
+body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text)}
+
+.app-header{position:sticky;top:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:12px var(--pad);background:color-mix(in oklab,var(--bg),#ffffff 85%);backdrop-filter:blur(6px);border-bottom:1px solid var(--ring)}
+.brand{display:flex;align-items:center;gap:8px;font-weight:700}.logo-dot{width:12px;height:12px;border-radius:999px;background:#111827;display:inline-block}.ver{font-size:12px;color:var(--muted)}
+
+.toolbar{padding:8px var(--pad) 0}
+.filters{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.settings{margin-top:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.settings-label{font-size:13px;color:var(--muted)}
+.chip{appearance:none;border-radius:999px;border:1px solid var(--ring);background:color-mix(in oklab,var(--bg),#f8fafc 80%);padding:10px 12px;font-size:14px}
+.chip.active{outline:2px solid color-mix(in oklab,var(--ring),#cbd5e1 50%)}
+
+.card-list{padding:12px;display:grid;gap:12px}
+
+.card{position:relative;border-radius:var(--radius);box-shadow:0 10px 24px var(--shadow);border:1px solid var(--ring);overflow:hidden}
+.card.comfy{background:var(--card)}
+.card.comfy .colorbar{height:14px;background:var(--bar)}
+.card.comfy .card-inner{padding:22px;background:var(--wash,transparent)}
+.card.comfy .actions,.card.comfy .icon-row{margin-top:12px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.card.comfy .action,.card.comfy .icon-btn{appearance:none;padding:12px 10px;border-radius:12px;border:1px solid rgba(0,0,0,.08);color:#fff;font-weight:700}
+
+.card.compact{border:none;color:#0b0b0b}
+body.theme-dark .card.compact{color:#fff}
+.card.compact .card-inner{padding:14px}
+.card.compact .colorbar{display:none}
+.card.compact .title-row{display:flex;align-items:center;gap:10px}
+.card.compact .title-row .emoji{font-size:20px}
+.card.compact .meta{margin-top:6px}
+.card.compact .hint{display:none}
+
+.card-title{margin-top:6px;font-size:18px;font-weight:700}
+.meta{display:flex;flex-wrap:wrap;gap:10px;align-items:center;font-size:13px;margin-top:8px}
+.badge{font-size:12px;padding:6px 10px;border-radius:10px;font-weight:600}
+.badge.muted{background:color-mix(in oklab,var(--bg),#e2e8f0 60%);color:var(--text)}
+.badge.light{background:rgba(255,255,255,.20);color:#fff;border:1px solid rgba(255,255,255,.25)}
+
+.hint{margin-top:10px;font-size:12px;color:var(--muted)}
+.card.swipe-left{outline:2px solid #ef4444}
+.card.swipe-right{outline:2px solid var(--physical)}
+
+.app-footer{padding:12px var(--pad);border-top:1px solid var(--ring);color:var(--muted);font-size:12px;display:flex;justify-content:space-between}
+
+/* Edit overlay */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);display:none;align-items:center;justify-content:center;z-index:50}
+.overlay.open{display:flex}
+.editor{width:min(720px,92%);max-height:90vh;overflow:auto;background:var(--card);border-radius:16px;border:1px solid var(--ring);box-shadow:0 10px 32px var(--shadow);padding:18px}
+.editor h2{margin:0 0 10px 0}
+.editor label{display:block;font-size:13px;color:var(--muted);margin-top:10px}
+.editor input,.editor textarea, .editor select{width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);margin-top:6px;background:var(--bg);color:var(--text)}
+.editor .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.map-wrap{height:220px;border:1px solid var(--ring);border-radius:12px;overflow:hidden;margin-top:8px}
+.preview{width:100%;height:120px;border-radius:12px;object-fit:cover;border:1px solid var(--ring);margin-top:8px}
+.editor .btns{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.btn{appearance:none;border:1px solid var(--ring);border-radius:12px;padding:10px 12px;background:color-mix(in oklab,var(--bg),#f8fafc 80%)}
+.btn.primary{background:#111827;color:#fff;border-color:#111827}
